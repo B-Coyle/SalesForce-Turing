@@ -12,8 +12,8 @@ public with sharing class contactList {
 
         String query = 'SELECT Name, Title, Phone, Email FROM Contact';
 
-        if (Name != null){
-            query +=  'WHERE firstName = :Name' ;
+        if (string.isNotBlank(Name)){
+            query +=  ' WHERE firstName = :Name' ;
         }
 
         contacts = Database.query(query);
