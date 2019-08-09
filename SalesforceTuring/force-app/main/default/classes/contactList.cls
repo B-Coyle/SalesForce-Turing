@@ -1,13 +1,9 @@
 public with sharing class contactList {
 
-    private Contact[] contacts; 
+    public Contact[] contacts{get; private set;} 
 
     public contactList() {
         contacts = [SELECT Name FROM Contact];
-    }
-
-    public Contact[] getContacts(){
-        return contacts;
     }
 }
 
