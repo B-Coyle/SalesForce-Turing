@@ -1,7 +1,10 @@
 <apex:page controller="Contactlist" lightningStylesheets="true">
     <apex:pageBlock title="contacts">
         <apex:pageBlockTable value="{!contacts}" var="contact">
-                <apex:column value="{!contact.name}"/>
+                <apex:column value="{!contact.name}" />
+                <apex:column value="{!contact.title}" />
+                <apex:column value="{!contact.phone}" />
+                <apex:column value="{!contact.email}" />
         </apex:pageBlockTable>
     </apex:pageBlock>
 </apex:page>
