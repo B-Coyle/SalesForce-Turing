@@ -10,9 +10,13 @@ public with sharing class contactList {
 
     public void filter() {
 
-        String query = 'SELECT Name, Title, Phone, Email FROM Contact WHERE firstName = :Name';
+        String query = 'SELECT Name, Title, Phone, Email FROM Contact';
 
-        contacts = [SELECT Name, Title, Phone, Email FROM Contact WHERE firstName = :Name];
+        if (Name != null){
+            query +=  'WHERE firstName = :Name' ;
+        }
+
+        contacts = Database.query(query);
 
 
     }
