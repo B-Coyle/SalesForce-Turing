@@ -1,4 +1,4 @@
-<apex:page>
+<apex:page controller="ForeverHome" sidebar="false" showHeader="false">
 <h1>Forever Home</h1>
     <apex:outputPanel id="main">
         <apex:outputPanel rendered="{!state='registrationChoice'}">
@@ -6,10 +6,14 @@
             <apex:form>
                     <apex:commandButton 
                     action="{!redirectParentRegistration}" 
-                    value="I am a Parent" />
+                    value="I am a Parent"
+                    reRender="main" 
+                    />
                     <apex:commandButton 
                     action="{!redirectChildRegistration}" 
-                    value="I am a Child" />
+                    value="I am a Child" 
+                    reRender="main"
+                    />
             </apex:form>
         </apex:outputPanel>
 
