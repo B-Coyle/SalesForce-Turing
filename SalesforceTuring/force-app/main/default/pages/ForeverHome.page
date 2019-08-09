@@ -3,8 +3,12 @@
     <apex:outputPanel>
         <apex:outputPanel>
             <h2>Register</h2>
-            <apex:commandButton action="" value="I am a Parent" />
-            <apex:commandButton action="" value="I am a Child" />
+            <apex:commandButton action="{!redirectParentRegistration}" value="I am a Parent" />
+            <apex:commandButton action="{!redirectChildRegistration}" value="I am a Child" />
+        </apex:outputPanel>
+
+        <apex:outputPanel>
+            <!-- inputs --> 
         </apex:outputPanel>
 
         <apex:outputPanel>
