@@ -3,7 +3,7 @@ public with sharing class contactList {
     private Contact[] contacts; 
 
     public contactList() {
-        contacts = [SELECT Id FROM Contact];
+        contacts = [SELECT Name FROM Contact];
     }
 
     public Contact[] getContacts(){
