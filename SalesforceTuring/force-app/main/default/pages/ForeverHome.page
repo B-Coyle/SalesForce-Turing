@@ -1,18 +1,23 @@
 <apex:page>
 <h1>Forever Home</h1>
-    <apex:outputPanel>
-        <apex:outputPanel>
+    <apex:outputPanel id="main">
+
+        <apex:outputPanel rendered="{!state='registrationChoice'}">
             <h2>Register</h2>
-            <apex:commandButton action="{!redirectParentRegistration}" value="I am a Parent" />
-            <apex:commandButton action="{!redirectChildRegistration}" value="I am a Child" />
+            <apex:commandButton 
+            action="{!redirectParentRegistration}" 
+            value="I am a Parent" />
+            <apex:commandButton 
+            action="{!redirectChildRegistration}" 
+            value="I am a Child" />
         </apex:outputPanel>
 
-        <apex:outputPanel>
-            <!-- inputs --> 
+        <apex:outputPanel rendered="{!state='parentRegistration'}">
+            <h2>Parent Registration</h2>
         </apex:outputPanel>
 
-        <apex:outputPanel>
-            <!-- inputs --> 
+        <apex:outputPanel rendered="{!state='childRegistration'}">
+            <h2>Child Registration</h2>
         </apex:outputPanel>
 
     </apex:outputPanel>
