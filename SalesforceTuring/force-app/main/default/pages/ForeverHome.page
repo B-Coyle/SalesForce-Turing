@@ -1,10 +1,15 @@
 <apex:page>
 <h1>Forever Home</h1>
-<h2>Register</h2>
     <apex:outputPanel>
         <apex:outputPanel>
+            <h2>Register</h2>
             <apex:commandButton action="{!redirectParent}" value="I am a Parent" />
             <apex:commandButton action="{!redirectChild}" value="I am a Child" />
         </apex:outputPanel>
+
+        <apex:outputPanel>
+            <!-- inputs --> 
+        </apex:outputPanel>
+        
     </apex:outputPanel>
 </apex:page>
