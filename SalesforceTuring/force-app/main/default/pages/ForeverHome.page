@@ -1,4 +1,4 @@
-<apex:page controller="ForeverHome" sidebar="false" showHeader="false">
+<apex:page controller="ForeverHome" sidebar="false" showHeader="false" docType="html-5.0">
 <h1>Forever Home</h1>
     <apex:outputPanel id="main">
         <apex:outputPanel rendered="{!state='registrationChoice'}">
@@ -19,11 +19,26 @@
 
         <apex:outputPanel rendered="{!state='parentRegistration'}">
             <h2>Parent Registration</h2>
+            <apex:form>
+                <apex:outputLabel value="Name" for="parentName" styleClass="label" />
+                <apex:inputField value="{!parent.name}" required="true" id="parentName" styleClass="field" />
+                <apex:outputLabel value="Email" for="parentEmail" styleClass="label" />
+                <apex:inputField value="{!parent.email_c}" required="true" id="parentEmail" styleClass="field" />
+                <apex:outputLabel value="Location" for="location" styleClass="label" />
+                <apex:inputField value="{!parent.location_c}" id="location" styleClass="field" />
+                <apex:outputLabel value="Own Bedroom" for="bedroom" styleClass="label" />
+                <apex:inputField value="{!parent.bedroom}" required="true" id="parentBedroom" styleClass="field" />
+                <apex:outputLabel value="Videogames" for="parentVideogames" styleClass="label" />
+                <apex:inputField value="{!parent.videogames}" required="true" id="parentVideogames" styleClass="field" />
+            </apex:form>
         </apex:outputPanel>
 
         <apex:outputPanel rendered="{!state='childRegistration'}">
             <h2>Child Registration</h2>
+            <apex:form>
+                <apex:outputLabel value="Name" for="childName" styleClass="label" />
+                <apex:inputField value="{!child.name}" required="true" id="childName" styleClass="field" />
+            </apex:form>
         </apex:outputPanel>
-
     </apex:outputPanel>
 </apex:page>
