@@ -1,5 +1,3 @@
-public with sharing class ContactsTriggerHandler {
-    public ContactsTriggerHandler() {
-
-    }
+public without sharing class ContactsTriggerHandler {
+    
 }
