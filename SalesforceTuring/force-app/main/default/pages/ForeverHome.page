@@ -21,15 +21,17 @@
             <h2>Parent Registration</h2>
             <apex:form>
                 <apex:outputLabel value="Name" for="parentName" styleClass="label" />
-                <apex:inputField value="{!parent.name}" required="true" id="parentName" styleClass="field" />
+                <apex:inputField value="{!Parent.name}" required="true" id="parentName" styleClass="field" />
                 <apex:outputLabel value="Email" for="parentEmail" styleClass="label" />
-                <apex:inputField value="{!parent.email_c}" required="true" id="parentEmail" styleClass="field" />
+                <apex:inputField value="{!parent.email}" required="true" id="parentEmail" styleClass="field" />
                 <apex:outputLabel value="Location" for="location" styleClass="label" />
-                <apex:inputField value="{!parent.location_c}" id="location" styleClass="field" />
+                <apex:inputField value="{!parent.location}" id="location" styleClass="field" />
                 <apex:outputLabel value="Own Bedroom" for="bedroom" styleClass="label" />
-                <apex:inputField value="{!parent.bedroom}" required="true" id="parentBedroom" styleClass="field" />
+                <apex:inputField value="{!parent.bedroom}" id="parentBedroom" styleClass="field" />
                 <apex:outputLabel value="Videogames" for="parentVideogames" styleClass="label" />
-                <apex:inputField value="{!parent.videogames}" required="true" id="parentVideogames" styleClass="field" />
+                <apex:inputField value="{!parent.videogames}" id="parentVideogames" styleClass="field" />
+                <apex:outputLabel value="Bedtime" for="bedtime" styleClass="label" />
+                <apex:inputField value="{!parent.bed_time}" id="bedtime" styleClass="field" /> 
             </apex:form>
         </apex:outputPanel>
 
@@ -38,14 +40,16 @@
             <apex:form>
                     <apex:outputLabel value="Name" for="childName" styleClass="label" />
                     <apex:inputField value="{!child.name}" required="true" id="childName" styleClass="field" />
-                    <apex:outputLabel value="Email" for="childEmail" styleClass="label" />
-                    <apex:inputField value="{!child.email_c}" required="true" id="childEmail" styleClass="field" />
                     <apex:outputLabel value="Location" for="location" styleClass="label" />
-                    <apex:inputField value="{!child.location_c}" id="location" styleClass="field" />
+                    <apex:inputField value="{!child.location}" id="location" styleClass="field" />
                     <apex:outputLabel value="Own Bedroom" for="bedroom" styleClass="label" />
                     <apex:inputField value="{!child.bedroom}" required="true" id="childBedroom" styleClass="field" />
                     <apex:outputLabel value="Videogames" for="childVideogames" styleClass="label" />
                     <apex:inputField value="{!child.videogames}" required="true" id="childVideogames" styleClass="field" />
+                    <apex:outputLabel value="minSiblings" for="minimumSiblings" styleClass="label" />
+                    <apex:inputField value="{!child.minSiblings}" id="minimumSiblings" styleClass="field" />
+                    <apex:outputLabel value="maxSiblings" for="maximumSiblings" styleClass="label" />
+                    <apex:inputField value="{!child.maxSiblings}" id="maximumSiblings" styleClass="field" />
             </apex:form>
         </apex:outputPanel>
     </apex:outputPanel>
