@@ -1,8 +1,9 @@
 trigger Contacts on Contact (after insert, after update) {
-    //add contact, make total numbe of contacts to match the correct number of contacts
     if (Trigger.isAfter) {
          if (Trigger.isInsert) {
-             ContactsTriggerHandler.calculateContacts(Trigger.new);
-        }
-    }
+             ContactsTriggerHandler.calculateContactsOnInsert(Trigger.new);
+        } else if (Trigger.isUpdate) {
+            ContactsTriggerHandler.calculateContactsOnUpdate(Trigger.oldMap, Trigger.newMap);
+          }
+    } 
 }
