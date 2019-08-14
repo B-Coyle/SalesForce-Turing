@@ -6,7 +6,8 @@ public without sharing class ContactsTriggerHandler {
         account[] accounts = new account[]{};
 
         for(aggregateResult result : results) {
-            Account account = new account(Contact_count__c = (Integer)result.get('the_count'));
+            Account account = new account(id = (Id)result.get('accountid'), Contact_count__c = (Integer)result.get('the_count'));
+            accounts.add(account);
         }
     
          update accounts;
