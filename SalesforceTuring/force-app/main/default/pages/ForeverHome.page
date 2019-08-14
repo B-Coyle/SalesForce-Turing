@@ -50,6 +50,10 @@
                     <apex:inputField value="{!child.minSiblings}" id="minimumSiblings" styleClass="field" />
                     <apex:outputLabel value="maxSiblings" for="maximumSiblings" styleClass="label" />
                     <apex:inputField value="{!child.maxSiblings}" id="maximumSiblings" styleClass="field" />
+                    <apex:pageBlockButtons>
+                        <apex:commandButton value="Save" action="{!save}"/>
+                    </apex:pageBlockButtons>
+                            
             </apex:form>
         </apex:outputPanel>
     </apex:outputPanel>

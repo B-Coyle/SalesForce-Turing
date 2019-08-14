@@ -19,4 +19,8 @@ public with sharing class ForeverHome {
 
     }
 
+    public void save() {
+        state = 'save'
+    }
+
 }
