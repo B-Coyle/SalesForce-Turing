@@ -1,8 +1,8 @@
 public with sharing class ForeverHome {
 
     public String state{get; private set;}
-    public Child_c child {get; private set;}
-    public Parent_c parent {get; private set;}
+    public Child child {get; private set;}
+    public Parent parent {get; private set;}
 
 
     public ForeverHome() {
@@ -20,7 +20,7 @@ public with sharing class ForeverHome {
     }
 
     public void save() {
-        state = 'save'
+        state = 'save';
     }
 
 }
