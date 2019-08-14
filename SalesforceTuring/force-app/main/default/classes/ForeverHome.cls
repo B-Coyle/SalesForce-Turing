@@ -1,8 +1,8 @@
 public with sharing class ForeverHome {
 
     public String state{get; private set;}
-    public Child child {get; private set;}
-    public Parent parent {get; private set;}
+    public Child__c child {get; private set;}
+    public Parent__c parent {get; private set;}
 
 
     public ForeverHome() {
