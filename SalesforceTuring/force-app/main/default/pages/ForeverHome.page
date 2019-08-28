@@ -46,8 +46,10 @@
                 <apex:inputField value="{!parent.Own_Bedroom__c}" id="parentBedroom" styleClass="field" />
                 <apex:outputLabel value="Videogames" for="parentVideogames" styleClass="label" />
                 <apex:inputField value="{!parent.Video_Games_Allowed__c}" id="parentVideogames" styleClass="field" />
+                <apex:outputLabel value="Siblings" for="siblings" styleClass="label" />
+                <apex:inputField value="{!parent.Siblings__c}" id="siblings" styleClass="field" />
                 <apex:outputLabel value="Bedtime" for="bedtime" styleClass="label" />
-                <apex:inputField value="{!parent.bedtime__c}" id="bedtime" styleClass="field" /> 
+                <apex:inputField value="{!parent.bedtime__c}" id="parent-bedtime" styleClass="field" /> 
                 <apex:commandButton value="Save" action="{!saveParent}"/>
             </apex:form>
         </apex:outputPanel>
@@ -71,6 +73,8 @@
                     <apex:inputField value="{!child.Maximum_Siblings__c}" id="maximumSiblings" styleClass="field" />
                     <apex:outputLabel value="Marital Status" for="maritalStatus" styleClass="label" />
                     <apex:inputField value="{!child.Marital_Status__c}" id="maritalStatus" styleClass="field" />
+                    <apex:outputLabel value="Bedtime" for="bedtime" styleClass="label" />
+                    <apex:inputField value="{!child.bedtime__c}" id="child-bedtime" styleClass="field" /> 
                     <apex:commandButton value="Save" action="{!saveChild}"/>
             </apex:form>
         </apex:outputPanel>
