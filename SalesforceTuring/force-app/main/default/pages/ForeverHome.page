@@ -1,9 +1,10 @@
-<apex:page controller="ForeverHome" sidebar="false" showHeader="false" docType="html-5.0">
+<apex:page controller="ForeverHome" sidebar="false" showHeader="false" docType="html-5.0" lightningStylesheets="true">
 <style>
     .field {
         display: block;
     }
-    .mainPage{
+    .mainPage, 
+    .mainForm{
         background-color:pink;
     }
     .label {
@@ -11,11 +12,11 @@
         color:white;
     }
 </style>
-<h1>Forever Home</h1>
-    <apex:outputPanel id="main" >
+    <apex:outputPanel id="main">
         <apex:outputPanel rendered="{!state='registrationChoice'}" styleClass="mainPage">
+            <h1>Forever Home</h1>
             <h2>Register</h2>
-            <apex:form >
+            <apex:form styleClass="mainForm">
                     <apex:commandButton 
                     action="{!redirectParentRegistration}" 
                     value="I am a Parent"
@@ -47,6 +48,7 @@
                 <apex:inputField value="{!parent.Video_Games_Allowed__c}" id="parentVideogames" styleClass="field" />
                 <apex:outputLabel value="Bedtime" for="bedtime" styleClass="label" />
                 <apex:inputField value="{!parent.bedtime__c}" id="bedtime" styleClass="field" /> 
+                <apex:commandButton value="Save" action="{!saveParent}"/>
             </apex:form>
         </apex:outputPanel>
 
@@ -69,7 +71,7 @@
                     <apex:inputField value="{!child.Maximum_Siblings__c}" id="maximumSiblings" styleClass="field" />
                     <apex:outputLabel value="Marital Status" for="maritalStatus" styleClass="label" />
                     <apex:inputField value="{!child.Marital_Status__c}" id="maritalStatus" styleClass="field" />
-                    <apex:commandButton value="Save" action="{!save}"/>
+                    <apex:commandButton value="Save" action="{!saveChild}"/>
             </apex:form>
         </apex:outputPanel>
     </apex:outputPanel>
