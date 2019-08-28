@@ -9,7 +9,6 @@ public with sharing class ForeverHome {
 
     public ForeverHome() {
         state = 'registrationChoice';
-   
     }
 
     public void redirectChildRegistration() {
@@ -20,7 +19,6 @@ public with sharing class ForeverHome {
     public void redirectParentRegistration() {
         parent = new Parent__c();
         state = 'parentRegistration';
-
     }
 
     public void setHour() {
@@ -44,7 +42,7 @@ public with sharing class ForeverHome {
         insert child;
     }
 
-    public SelectOption[] getBedtimeHour() {
+    public SelectOption[] getbedtime_hours() {
         return new SelectOption[]{
             new SelectOption('1', '1'),
             new SelectOption('2', '2'),
@@ -61,7 +59,7 @@ public with sharing class ForeverHome {
         };
     }
 
-    public SelectOption[] getBedtimeMinute() {
+    public SelectOption[] getbedtime_minutes() {
            return new SelectOption[]{
             new SelectOption('0', '0'),
             new SelectOption('15', '15'),
@@ -71,11 +69,12 @@ public with sharing class ForeverHome {
            };
     }
 
-    public SelectOption[] getBedtimeMS() {
-        bedtime_choice = 'PM';
-           return new SelectOption[]{
+    public SelectOption[] getbedtime_ms() {
+            bedtime_choice = 'PM';
+            return new SelectOption[]{
             new SelectOption('AM', 'AM'),
             new SelectOption('PM', 'PM')
            };
     }
+
 }

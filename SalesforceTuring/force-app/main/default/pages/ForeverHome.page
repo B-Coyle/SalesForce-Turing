@@ -75,17 +75,24 @@
                     <apex:inputField value="{!child.Marital_Status__c}" id="maritalStatus" styleClass="field" />
                     <apex:outputLabel value="Bedtime" for="bedtime" styleClass="label" />
                     <apex:selectList value ='{!bedtime_hour}' size='1'>
-                        <apex:selectOptions value='{!bedtime_hour}'></apex:selectOptions>
+                        <apex:selectOptions value='{!bedtime_hours}'></apex:selectOptions>
                     </apex:selectList>
                     <apex:selectList value ='{!bedtime_minute}' size='1'>
-                        <apex:selectOptions value='{!bedtime_minute}'></apex:selectOptions>
+                        <apex:selectOptions value='{!bedtime_minutes}'></apex:selectOptions>
                     </apex:selectList>
                     <apex:selectRadio>
                         <apex:selectOption itemValue="AM" itemLabel="AM" />
                         <apex:selectOption itemValue="PM" itemLabel="PM" />
                     </apex:selectRadio>
+                    <apex:selectRadio value='{!bedtime_choice}'>
+                        <apex:selectOptions value='{!bedtime_ms}' />
+                    </apex:selectRadio>
                     <apex:commandButton value="Save" action="{!saveChild}"/>
             </apex:form>
+        </apex:outputPanel>
+
+        <apex:outputPanel rendered="{!save'}">
+            <h1>Thank you for your registering!</h1>
         </apex:outputPanel>
     </apex:outputPanel>
 </apex:page>
