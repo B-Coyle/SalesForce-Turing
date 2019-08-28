@@ -91,7 +91,7 @@
             </apex:form>
         </apex:outputPanel>
 
-        <apex:outputPanel rendered="{!save'}">
+        <apex:outputPanel rendered="{!state = 'save'}">
             <h1>Thank you for your registering!</h1>
         </apex:outputPanel>
     </apex:outputPanel>
