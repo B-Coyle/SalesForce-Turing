@@ -1,13 +1,26 @@
 <apex:page controller="ForeverHome" sidebar="false" showHeader="false" docType="html-5.0">
+<style>
+    .field {
+        display: block;
+    }
+    .mainPage{
+        background-color:pink;
+    }
+    .label {
+        background-color: blue;
+        color:white;
+    }
+</style>
 <h1>Forever Home</h1>
-    <apex:outputPanel id="main">
-        <apex:outputPanel rendered="{!state='registrationChoice'}">
+    <apex:outputPanel id="main" >
+        <apex:outputPanel rendered="{!state='registrationChoice'}" styleClass="mainPage">
             <h2>Register</h2>
-            <apex:form>
+            <apex:form >
                     <apex:commandButton 
                     action="{!redirectParentRegistration}" 
                     value="I am a Parent"
                     reRender="main" 
+                    styleClass="parentBtn"
                     />
                     <apex:commandButton 
                     action="{!redirectChildRegistration}" 
@@ -23,37 +36,40 @@
                 <apex:outputLabel value="Name" for="parentName" styleClass="label" />
                 <apex:inputField value="{!parent.name}" required="true" id="parentName" styleClass="field" />
                 <apex:outputLabel value="Email" for="parentEmail" styleClass="label" />
-                <apex:inputField value="{!parent.email}" required="true" id="parentEmail" styleClass="field" />
-                <apex:outputLabel value="Location" for="location" styleClass="label" />
-                <apex:inputField value="{!parent.location}" id="location" styleClass="field" />
+                <apex:inputField value="{!parent.email__c}" required="true" id="parentEmail" styleClass="field" />
+                <apex:outputLabel value="Location-City" for="location" styleClass="label" />
+                <apex:inputField value="{!parent.location_city__c}" id="location-city" styleClass="field" />
+                <apex:outputLabel value="Location-State" for="location" styleClass="label" />
+                <apex:inputField value="{!parent.location_state__c}" id="location-state" styleClass="field" />
                 <apex:outputLabel value="Own Bedroom" for="bedroom" styleClass="label" />
-                <apex:inputField value="{!parent.bedroom}" id="parentBedroom" styleClass="field" />
+                <apex:inputField value="{!parent.Own_Bedroom__c}" id="parentBedroom" styleClass="field" />
                 <apex:outputLabel value="Videogames" for="parentVideogames" styleClass="label" />
-                <apex:inputField value="{!parent.videogames}" id="parentVideogames" styleClass="field" />
+                <apex:inputField value="{!parent.Video_Games_Allowed__c}" id="parentVideogames" styleClass="field" />
                 <apex:outputLabel value="Bedtime" for="bedtime" styleClass="label" />
-                <apex:inputField value="{!parent.bed_time}" id="bedtime" styleClass="field" /> 
+                <apex:inputField value="{!parent.bedtime__c}" id="bedtime" styleClass="field" /> 
             </apex:form>
         </apex:outputPanel>
 
         <apex:outputPanel rendered="{!state='childRegistration'}">
-            <h2>Child Registration</h2>
+            <h2> Child Registration</h2>
             <apex:form>
                     <apex:outputLabel value="Name" for="childName" styleClass="label" />
                     <apex:inputField value="{!child.name}" required="true" id="childName" styleClass="field" />
-                    <apex:outputLabel value="Location" for="location" styleClass="label" />
-                    <apex:inputField value="{!child.location}" id="location" styleClass="field" />
+                    <apex:outputLabel value="Location-City" for="location" styleClass="label" />
+                    <apex:inputField value="{!child.Location_City__c}" id="location-city" styleClass="field" />
+                    <apex:outputLabel value="Location-State" for="location" styleClass="label" />
+                    <apex:inputField value="{!child.Location_State__c}" id="location-state" styleClass="field" />
                     <apex:outputLabel value="Own Bedroom" for="bedroom" styleClass="label" />
-                    <apex:inputField value="{!child.bedroom}" required="true" id="childBedroom" styleClass="field" />
+                    <apex:inputField value="{!child.Own_Bedroom__c}" required="true" id="childBedroom" styleClass="field" />
                     <apex:outputLabel value="Videogames" for="childVideogames" styleClass="label" />
-                    <apex:inputField value="{!child.videogames}" required="true" id="childVideogames" styleClass="field" />
+                    <apex:inputField value="{!child.videogames__c}" required="true" id="childVideogames" styleClass="field" />
                     <apex:outputLabel value="minSiblings" for="minimumSiblings" styleClass="label" />
-                    <apex:inputField value="{!child.minSiblings}" id="minimumSiblings" styleClass="field" />
+                    <apex:inputField value="{!child.Minimum_Siblings__c	}" id="minimumSiblings" styleClass="field" />
                     <apex:outputLabel value="maxSiblings" for="maximumSiblings" styleClass="label" />
-                    <apex:inputField value="{!child.maxSiblings}" id="maximumSiblings" styleClass="field" />
-                    <apex:pageBlockButtons>
-                        <apex:commandButton value="Save" action="{!save}"/>
-                    </apex:pageBlockButtons>
-                            
+                    <apex:inputField value="{!child.Maximum_Siblings__c}" id="maximumSiblings" styleClass="field" />
+                    <apex:outputLabel value="Marital Status" for="maritalStatus" styleClass="label" />
+                    <apex:inputField value="{!child.Marital_Status__c}" id="maritalStatus" styleClass="field" />
+                    <apex:commandButton value="Save" action="{!save}"/>
             </apex:form>
         </apex:outputPanel>
     </apex:outputPanel>
