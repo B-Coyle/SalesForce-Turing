@@ -51,4 +51,14 @@ public with sharing class ForeverHome {
         };
     }
 
+    public SelectOption[] setBedtimeMinute() {
+           return new SelectOption[]{
+            new SelectOption('0', '0'),
+            new SelectOption('15', '15'),
+            new SelectOption('25', '25'),
+            new SelectOption('30', '30'),
+            new SelectOption('45', '45')
+           }
+    }
+
 }
