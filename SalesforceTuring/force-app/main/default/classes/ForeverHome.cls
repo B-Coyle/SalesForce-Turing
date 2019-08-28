@@ -35,7 +35,7 @@ public with sharing class ForeverHome {
     }
 
     public SelectOption[] setBedtimeHour() {
-        SelectOption[] hours = new SelectOption[]{
+        return new SelectOption[]{
             new SelectOption('1', '1'),
             new SelectOption('2', '2'),
             new SelectOption('3', '3'),
@@ -48,8 +48,6 @@ public with sharing class ForeverHome {
             new SelectOption('10', '10'),
             new SelectOption('11', '11'),
             new SelectOption('12', '12')
-
-
         };
     }
 
