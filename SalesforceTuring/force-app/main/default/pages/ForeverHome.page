@@ -74,7 +74,16 @@
                     <apex:outputLabel value="Marital Status" for="maritalStatus" styleClass="label" />
                     <apex:inputField value="{!child.Marital_Status__c}" id="maritalStatus" styleClass="field" />
                     <apex:outputLabel value="Bedtime" for="bedtime" styleClass="label" />
-                    <apex:inputField value="{!child.bedtime__c}" id="child-bedtime" styleClass="field" /> 
+                    <apex:selectList value ='{!bedtime_hour}' size='1'>
+                        <apex:selectOptions value='{!bedtime_hour}'></apex:selectOptions>
+                    </apex:selectList>
+                    <apex:selectList value ='{!bedtime_minute}' size='1'>
+                        <apex:selectOptions value='{!bedtime_minute}'></apex:selectOptions>
+                    </apex:selectList>
+                    <apex:selectRadio>
+                        <apex:selectOption itemValue="AM" itemLabel="AM" />
+                        <apex:selectOption itemValue="PM" itemLabel="PM" />
+                    </apex:selectRadio>
                     <apex:commandButton value="Save" action="{!saveChild}"/>
             </apex:form>
         </apex:outputPanel>

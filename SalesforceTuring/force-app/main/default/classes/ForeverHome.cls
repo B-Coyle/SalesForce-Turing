@@ -5,6 +5,7 @@ public with sharing class ForeverHome {
     public Parent__c parent {get; set;}
     public String bedtime_hour{get; set;}
     public String bedtime_minute{get; set;}
+    public String bedtime_choice{get; set;}
 
     public ForeverHome() {
         state = 'registrationChoice';
@@ -22,19 +23,28 @@ public with sharing class ForeverHome {
 
     }
 
-    public void saveParent() {
-        parent.bedtime__c = Time.newInstance(20, 0, 0, 0);
-        state = 'save';
-        insert parent;
+    public void setHour() {
+        integer hour = Integer.valueOf(bedtime_hour);
+        if (bedtime_choice == 'PM'){
+            bedtime_hour += 12;
         }
+    }
+
+    public void saveParent() {
+        state = 'save';
+        setHour();
+        parent.bedtime__c = Time.newInstance(setHour(), Integer.valueOf(bedtime_minute), 0, 0);
+        insert parent;
+    }
 
     public void saveChild() {
-        child.bedtime__c = Time.newInstance(20, 0, 0, 0);
         state = 'save';
+        setHour();
+        child.bedtime__c = Time.newInstance(setHour(), Integer.valueOf(bedtime_minute), 0, 0);
         insert child;
     }
 
-    public SelectOption[] setBedtimeHour() {
+    public SelectOption[] getBedtimeHour() {
         return new SelectOption[]{
             new SelectOption('1', '1'),
             new SelectOption('2', '2'),
@@ -47,18 +57,25 @@ public with sharing class ForeverHome {
             new SelectOption('9', '9'),
             new SelectOption('10', '10'),
             new SelectOption('11', '11'),
-            new SelectOption('12', '12')
+            new SelectOption('0', '12')
         };
     }
 
-    public SelectOption[] setBedtimeMinute() {
+    public SelectOption[] getBedtimeMinute() {
            return new SelectOption[]{
             new SelectOption('0', '0'),
             new SelectOption('15', '15'),
             new SelectOption('25', '25'),
             new SelectOption('30', '30'),
             new SelectOption('45', '45')
-           }
+           };
     }
 
+    public SelectOption[] getBedtimeMS() {
+        bedtime_choice = 'PM';
+           return new SelectOption[]{
+            new SelectOption('AM', 'AM'),
+            new SelectOption('PM', 'PM')
+           };
+    }
 }
